@@ -24,15 +24,16 @@ namespace Car_Rental_Program
         // DONE add Registration Number 
         // DONE add variable for OdometerReading (in KM),
         // DONE add variable for TankCapacity (in litres)
-
+        
+        // Creates list to store vehicles
         private static List<Vehicle> _vehicleList { get { return LoadVehicles(); } }
 
         public static List<Vehicle> vehicleList { get { return _vehicleList; } }
 
         public string Error { get { return null; } }
 
-        public Dictionary<string, string> ErrorCollection { get; private set; } = new Dictionary<string, string>();
-
+        public Dictionary<string, string> ErrorCollection { get; private set; } = new Dictionary<string, string>()
+        
         public string this[string vehicle]
         {
             get
@@ -79,7 +80,9 @@ namespace Car_Rental_Program
             }
 
         }
-
+        
+        // Getters and Setters
+        
         public int Id
         {
 
@@ -169,6 +172,8 @@ namespace Car_Rental_Program
             }
 
         }
+        
+        //File paths for saving and loading
 
         private static string clusterFolder = "C4ProgS2_TDD_AS2_Lists";
         private static string mainFolder = "Car_Rental_System";
