@@ -39,7 +39,9 @@ namespace Car_Rental_Program
         private static string clusterFolder = "C4ProgS2_TDD_AS2_Lists";
         private static string mainFolder = "Car_Rental_System";
         private static string Rental_FileName = "rentalList.json";
-
+        
+        // Getters and Setters
+        
         public int Id
         {
 
@@ -145,7 +147,8 @@ namespace Car_Rental_Program
 
 
         }
-
+        
+        // Locate rentalList Json file, if it doesn't exist one is made
         public static string getFileNamePath()
         {
             string sReturn = "";
