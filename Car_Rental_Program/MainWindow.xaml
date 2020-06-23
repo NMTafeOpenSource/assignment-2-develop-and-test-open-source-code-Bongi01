@@ -1,0 +1,57 @@
+﻿<Window x:Class="Car_Rental_Program.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Car_Rental_Program"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+
+                <MenuItem Header="New"/>
+                <MenuItem Header="Open"/>
+                <MenuItem Header="Save"/>
+
+                <Separator/>
+
+                <MenuItem Header="Exit" Click="Quit_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="Edit">
+                <MenuItem Header="Cut"/>
+                <MenuItem Header="Copy"/>
+                <MenuItem Header="Paste"/>
+
+            </MenuItem>
+            <MenuItem Header="Vehicles">
+
+                <MenuItem Header="Add Vehicle" Click="btn_Add_Click"/>
+                <MenuItem Header="Vehicle List" Click="btn_toVehicleList_Click"/>
+
+            </MenuItem>
+
+            <MenuItem x:Name="Services" Header="Services"/>
+
+            <MenuItem Header="Rental" Click="MenuItem_Click"/>
+
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="125*"/>
+                <ColumnDefinition Width="271*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btn_toVehicles" Content="Vehicles" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="230" Height="107" Background="#FFE859FF" FontWeight="Bold" FontSize="36" BorderBrush="#FF95FF4B" Click="btn_toVehicles_Click"/>
+            <Button x:Name="btn_toRentals" Content="Rentals" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="230" Height="107" Background="#FFA8FF76" FontSize="36" FontWeight="Bold" BorderBrush="#FFD923E2" Click="btn_toRentals_Click"/>
+        </Grid>
+    </DockPanel>
+</Window>

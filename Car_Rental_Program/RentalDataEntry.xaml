@@ -1,0 +1,94 @@
+﻿<Window x:Class="Car_Rental_Program.RentalDataEntry"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Car_Rental_Program" xmlns:apexControls="clr-namespace:Apex.Controls;assembly=Apex"
+        mc:Ignorable="d"
+        Title="RentalDataEntry" Height="450" Width="800">
+
+    <Window.DataContext>
+        <local:MainViewModel x:Name="ViewModel" />
+    </Window.DataContext>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblCode"  Content="Id" 
+               HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" 
+               Grid.Row="1" Grid.Column="1"/>
+        <TextBox x:Name="txtCode" Text="" 
+                 TextWrapping="Wrap" MaxLength="64"
+                 VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,42,0,0"
+                 Background="AliceBlue" BorderBrush="Black"
+                 Width="350" Height="23"
+                 Grid.Row="1" Grid.Column="1"/>
+
+        <Label x:Name="lblRentalType"  Content="Rental Type" 
+               HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" 
+               Grid.Row="2" Grid.Column="1"/>
+
+        <apexControls:EnumerationComboBox x:Name="cmRentalType" Grid.Column="1" Grid.Row="2"  Width="350" Height="23"
+                SelectedEnumeration="{Binding RentalType}" Margin="10,45,26,50" >
+            <apexControls:EnumerationComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </apexControls:EnumerationComboBox.Background>
+        </apexControls:EnumerationComboBox>
+
+        <Label x:Name="lblRentalStart"  Content="Start Date" 
+               HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" 
+               Grid.Row="1" Grid.Column="2"/>
+        <DatePicker x:Name="txtRentalStart" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,42,0,0"  
+                 Width="350" Height="23" Background="AliceBlue" BorderBrush="Black"
+                 Grid.Row="1" Grid.Column="2" />
+
+        <Label x:Name="lblEnd"  Content="End Date" 
+               HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" 
+               Grid.Row="2" Grid.Column="2"/>
+        <DatePicker x:Name="txtRentalEnd" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,42,0,0"  
+                 Width="350" Height="23" Background="AliceBlue" BorderBrush="Black"
+                 Grid.Row="2" Grid.Column="2" />
+
+        <Label x:Name="lblStartOdo"  Content="Initial Odometer Reading" 
+               HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" 
+               Grid.Row="3" Grid.Column="1"/>
+
+        <TextBox x:Name="txtStartOdo" Text="" 
+                 TextWrapping="Wrap" MaxLength="64" 
+                 VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,42,0,0"  
+                 Width="350" Height="23" Background="AliceBlue" BorderBrush="Black"
+                 Grid.Row="3" Grid.Column="1"/>
+
+        <Button x:Name="btnSave" Content="Save" 
+                Grid.Column="2" Grid.Row="4"
+                HorizontalAlignment="Left" Margin="221,10,0,10"   
+                Width="75" Click="BtnSave_Click" Background="Magenta"/>
+
+        <Button x:Name="btnCancel" Content="Cancel"                 
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="301,10,0,0"                                 
+                Width="75" Height="25" Background="Gray"
+                Grid.Row="4" Grid.Column="2" Click="BtnCancel_Click" />
+        
+        <Label x:Name="lbl_rentalCost" Content="Rental Cost" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top"/>
+        
+        <TextBox x:Name="txt_rentalCost" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,42,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Background="AliceBlue" BorderBrush="Black" />
+
+    </Grid>
+</Window>
